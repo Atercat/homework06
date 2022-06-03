@@ -15,3 +15,7 @@ RUN mvn package
 # публикация приложения
 RUN cp target/hello-1.0.war /var/lib/tomcat9/webapps/
 EXPOSE 8080
+
+# запуск tomcat
+ENV CATALINA_BASE=/var/lib/tomcat9
+CMD ["/usr/share/tomcat9/bin/catalina.sh", "run"]
