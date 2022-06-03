@@ -24,6 +24,7 @@ RUN apt purge default-jdk maven git -y
 RUN apt autoremove -y
 WORKDIR /
 RUN rm -rf boxfuse-sample-java-war-hello
+RUN rm -rf /root/.m2
 
 # запуск tomcat
 ENV CATALINA_BASE=/var/lib/tomcat9
