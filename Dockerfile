@@ -15,10 +15,8 @@ RUN mvn package
 # публикация приложения в корень
 ENV apps_dir=/var/lib/tomcat9/webapps
 RUN cp target/hello-1.0.war ${apps_dir}/
-ADD wait_for_dir.sh ./
-RUN bash wait_for_dir.sh "${apps_dir}/hello-1.0"
 RUN rm -rf ${apps_dir}/ROOT
-RUN ls -s ${apps_dir}/hello-1.0 ${apps_dir}/ROOT
+RUN ln -s ${apps_dir}/hello-1.0 ${apps_dir}/ROOT
 EXPOSE 8080
 
 # очистка ненужных пакетов и файлов
