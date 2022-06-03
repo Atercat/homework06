@@ -22,6 +22,8 @@ EXPOSE 8080
 # очистка ненужных пакетов и файлов
 RUN apt purge default-jdk maven git -y
 RUN apt autoremove -y
+RUN apt clean
+RUN rm -rf /var/lib/apt/lists/*
 WORKDIR /
 RUN rm -rf boxfuse-sample-java-war-hello
 RUN rm -rf /root/.m2
