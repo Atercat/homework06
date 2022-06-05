@@ -20,4 +20,4 @@ ENV apps_dir=/opt/apache-tomcat-${tc9_ver}/webapps
 RUN rm -rf ${apps_dir}/*
 RUN cp target/hello-1.0.war ${apps_dir}/
 RUN ln -s ${apps_dir}/hello-1.0 ${apps_dir}/ROOT
-CMD ["/opt/apache-tomcat-${tc9_ver}/bin/catalina.sh", "run"]
+#CMD ["/opt/apache-tomcat-${tc9_ver}/bin/catalina.sh", "run"]
