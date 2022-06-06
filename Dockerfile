@@ -11,8 +11,7 @@ RUN apk update && apk add openjdk11 maven git \
     && mvn -f ${boxfuse}/pom.xml package \
     && mv ${boxfuse}/target/hello-1.0.war / \
     && rm -rf ${boxfuse} \
-    && apk del openjdk11 maven git \
-    && apk cache clean
+    && apk del openjdk11 maven git
 
 # установка Tomcat 9 и публикация приложения
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v${tc9_ver}/bin/apache-tomcat-${tc9_ver}.tar.gz \
