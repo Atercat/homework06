@@ -22,4 +22,5 @@ RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v${tc9_ver}/bin/apache-tomcat-
 EXPOSE 8080
 
 # запуск Tomcat
+RUN apk add openjdk11-jre
 CMD ["sh", "-c", "/opt/apache-tomcat-${tc9_ver}/bin/catalina.sh run"]
